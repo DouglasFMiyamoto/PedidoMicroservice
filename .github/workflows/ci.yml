@@ -1,0 +1,47 @@
+name: CI Pipeline
+
+on:
+  pull_request:
+    branches:
+      - main
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout código
+        uses: actions/checkout@v3
+
+      - name: Configurar .NET 8
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: 8.0.x
+
+      - name: Restaurar pacotes
+        run: dotnet restore
+
+      - name: Compilar aplicação
+        run: dotnet build --configuration Release --no-restore
+
+      - name: Executar testes com cobertura
+        run: dotnet test --configuration Release --collect:"XPlat Code Coverage" --settings coverlet.runsettings
+
+      - name: Publicar resultado no SonarQube
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        run: |
+          dotnet tool install --global dotnet-sonarscanner
+          dotnet sonarscanner begin /k:"seu-projeto" /d:sonar.login="$SONAR_TOKEN"
+          dotnet build --configuration Release
+          dotnet sonarscanner end /d:sonar.login="$SONAR_TOKEN"
+
+      - name: Garantir cobertura mínima de 70%
+        run: |
+          COVERAGE=$(cat TestResults/*/coverage.cobertura.xml | grep -oP 'line-rate="\K[^"]+')
+          MIN_COVERAGE=0.70
+          if (( $(echo "$COVERAGE < $MIN_COVERAGE" | bc -l) )); then
+            echo "Cobertura abaixo do mínimo exigido de 70% ($COVERAGE)"
+            exit 1
+          fi
