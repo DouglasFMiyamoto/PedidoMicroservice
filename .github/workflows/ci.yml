@@ -20,13 +20,13 @@ jobs:
           dotnet-version: 8.0.x
 
       - name: Restaurar pacotes
-        run: dotnet restore PedidoMicroservice/PedidoMicroservice.csproj
+        run: dotnet restore PedidoMicroserviceTests/PedidoMicroserviceTests.csproj
 
       - name: Compilar aplicação
-        run: dotnet build PedidoMicroservice/PedidoMicroservice.csproj --configuration Release --no-restore
+        run: dotnet build PedidoMicroserviceTests/PedidoMicroserviceTests.csproj --configuration Release --no-restore
 
       - name: Executar testes com cobertura
-        run: dotnet test --configuration Release --collect:"XPlat Code Coverage" --settings coverlet.runsettings
+        run: dotnet test PedidoMicroserviceTests/PedidoMicroserviceTests.csproj --configuration Release --collect:"XPlat Code Coverage" --settings coverlet.runsettings
 
       - name: Publicar resultado no SonarQube
         env:
@@ -34,7 +34,7 @@ jobs:
         run: |
           dotnet tool install --global dotnet-sonarscanner
           dotnet sonarscanner begin /k:"seu-projeto" /d:sonar.login="$SONAR_TOKEN"
-          dotnet build --configuration Release
+          dotnet build PedidoMicroserviceTests/PedidoMicroserviceTests.csproj --configuration Release
           dotnet sonarscanner end /d:sonar.login="$SONAR_TOKEN"
 
       - name: Garantir cobertura mínima de 70%
