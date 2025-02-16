@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "GZSo27EDL9+fKZPkO17ke01rMxECY99IqGFVy0NRKAg=",
+  "Source": "PedidoMicroservice",
+  "BasePath": "_content/PedidoMicroservice",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

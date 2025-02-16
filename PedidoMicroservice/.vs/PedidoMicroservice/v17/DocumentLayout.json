@@ -1,0 +1,84 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Pos\\PedidoMicroservice\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{4A8F5C7D-42E3-4581-8A3E-D7D1663A298D}|..\\PedidoMicroserviceTests\\PedidoMicroserviceTests.csproj|c:\\pos\\pedidomicroservicetests\\bdd\\pedidocriacaosteps.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4A8F5C7D-42E3-4581-8A3E-D7D1663A298D}|..\\PedidoMicroserviceTests\\PedidoMicroserviceTests.csproj|c:\\pos\\pedidomicroservicetests\\usecases\\pedidousecasetests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 8,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{809f6ff3-8092-454a-8003-6d4091f9b5bb}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:2:0:{65ddf8c3-8f89-4077-a6c6-dbb8853aab13}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:17:0:{2456bd12-ecf7-4988-a4a6-67d49173f565}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:18:0:{2456bd12-ecf7-4988-a4a6-67d49173f565}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:3:0:{65ddf8c3-8f89-4077-a6c6-dbb8853aab13}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:4:0:{65ddf8c3-8f89-4077-a6c6-dbb8853aab13}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{13b12e3e-c1b4-4539-9371-4fe9a0d523fc}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "PedidoCriacaoSteps.cs",
+              "DocumentMoniker": "C:\\Pos\\PedidoMicroserviceTests\\BDD\\PedidoCriacaoSteps.cs",
+              "RelativeDocumentMoniker": "..\\PedidoMicroserviceTests\\BDD\\PedidoCriacaoSteps.cs",
+              "ToolTip": "C:\\Pos\\PedidoMicroserviceTests\\BDD\\PedidoCriacaoSteps.cs",
+              "RelativeToolTip": "..\\PedidoMicroserviceTests\\BDD\\PedidoCriacaoSteps.cs",
+              "ViewState": "AQIAACQAAAAAAAAAAAAowDUAAAAlAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-16T13:26:49.798Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "PedidoUseCaseTests.cs",
+              "DocumentMoniker": "C:\\Pos\\PedidoMicroserviceTests\\UseCases\\PedidoUseCaseTests.cs",
+              "RelativeDocumentMoniker": "..\\PedidoMicroserviceTests\\UseCases\\PedidoUseCaseTests.cs",
+              "ToolTip": "C:\\Pos\\PedidoMicroserviceTests\\UseCases\\PedidoUseCaseTests.cs",
+              "RelativeToolTip": "..\\PedidoMicroserviceTests\\UseCases\\PedidoUseCaseTests.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACAAAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-16T13:13:29.809Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
