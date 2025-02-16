@@ -28,9 +28,6 @@ jobs:
       - name: Executar testes com cobertura
         run: dotnet test PedidoMicroserviceTests/PedidoMicroserviceTests.csproj --configuration Release --collect:"XPlat Code Coverage" --results-directory ./TestResults
 
-      - name: Listar arquivos no diretório TestResults
-        run: ls -R ./TestResults
-
       - name: Instalar ReportGenerator
         run: dotnet tool install --global dotnet-reportgenerator-globaltool
 
