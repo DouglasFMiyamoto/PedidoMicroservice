@@ -26,7 +26,7 @@ jobs:
         run: dotnet build PedidoMicroserviceTests/PedidoMicroserviceTests.csproj --configuration Release --no-restore
 
       - name: Executar testes com cobertura
-        run: dotnet test PedidoMicroserviceTests/PedidoMicroserviceTests.csproj --configuration Release --collect:"XPlat Code Coverage" --settings coverlet.runsettings
+        run: dotnet test PedidoMicroserviceTests/PedidoMicroserviceTests.csproj --configuration Release --collect:"XPlat Code Coverage"
 
       - name: Publicar resultado no SonarQube
         env:
