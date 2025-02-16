@@ -1,2 +1,2 @@
 # PedidoMicroservice
-Repositório para o microserviço de pedidos.
+Repositório para o microserviço de pedidos...
