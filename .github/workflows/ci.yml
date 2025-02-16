@@ -20,7 +20,7 @@ jobs:
           dotnet-version: 8.0.x
 
       - name: Restaurar pacotes
-        run: dotnet restore src/PedidoMicroservice/PedidoMicroservice.csproj
+        run: dotnet restore src/PedidoMicroservice/PedidoMicroservice/PedidoMicroservice.csproj
 
       - name: Compilar aplicação
         run: dotnet build --configuration Release --no-restore
