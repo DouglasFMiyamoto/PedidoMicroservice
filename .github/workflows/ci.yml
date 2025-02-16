@@ -28,18 +28,19 @@ jobs:
       - name: Executar testes com cobertura
         run: dotnet test PedidoMicroserviceTests/PedidoMicroserviceTests.csproj --configuration Release --collect:"XPlat Code Coverage"
 
+      - name: Instalar ReportGenerator
+        run: dotnet tool install --global dotnet-reportgenerator-globaltool
+
+      - name: Atualizar PATH para incluir ferramentas globais do .NET
+        run: echo "$HOME/.dotnet/tools" >> $GITHUB_PATH
+
+      - name: Gerar relatório de cobertura
+        run: reportgenerator "-reports:TestResults/*/coverage.cobertura.xml" "-targetdir:coverage-report" -reporttypes:TextSummary
+
       - name: Garantir cobertura mínima de 70%
         run: |
-          # Gerar o relatório de cobertura em formato Cobertura
-          reportgenerator "-reports:TestResults/*/coverage.cobertura.xml" "-targetdir:coverage-report" -reporttypes:TextSummary
-
-          # Extrair a cobertura de código do relatório
           COVERAGE=$(grep -oP 'Line coverage: \K[0-9.]+(?=%)' coverage-report/coverage-summary.txt)
-
-          # Definir a cobertura mínima desejada
           MIN_COVERAGE=70.0
-
-          # Comparar a cobertura atual com a mínima
           if (( $(echo "$COVERAGE < $MIN_COVERAGE" | bc -l) )); then
             echo "Cobertura abaixo do mínimo exigido de 70% ($COVERAGE%)"
             exit 1
