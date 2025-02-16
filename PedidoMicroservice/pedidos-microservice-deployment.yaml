@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pedidos-microservice-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: pedidos-microservice
+  template:
+    metadata:
+      labels:
+        app: pedidos-microservice
+    spec:
+      containers:
+        - name: pedidos-microservice
+          image: pedidos_microservice:latest
+          ports:
+            - containerPort: 8080
+          env:
+            - name: ASPNETCORE_ENVIRONMENT
+              value: "Development"
+            - name: ConnectionStrings__PostgresConnection
+              value: "Host=postgres-db;Port=5432;Database=pedidos_db;Username=fiap;Password=fiap@123"
+            - name: SQS_ENDPOINT
+              value: "http://localstack:4566"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: pedidos-microservice-service
+spec:
+  selector:
+    app: pedidos-microservice
+  ports:
+    - protocol: TCP
+      port: 8080
+      targetPort: 8080
+  type: ClusterIP
