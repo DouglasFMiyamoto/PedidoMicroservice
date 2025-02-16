@@ -6,7 +6,7 @@ EXPOSE 8080
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /src
 
-COPY ["PedidoMicroservice.csproj", "./"]
+COPY ["PedidoMicroservice/PedidoMicroservice.csproj", "./"]
 RUN dotnet restore "PedidoMicroservice.csproj"
 
 COPY . . 
@@ -21,7 +21,7 @@ FROM mcr.microsoft.com/dotnet/sdk:8.0 AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
 
-# Definir vari·vel de ambiente para o LocalStack
+# Definir vari√°vel de ambiente para o LocalStack
 ENV AWS_SERVICE_URL=http://localstack:4566
 
 ENTRYPOINT ["dotnet", "PedidoMicroservice.dll"]
