@@ -23,7 +23,7 @@ jobs:
         run: dotnet restore PedidoMicroservice/PedidoMicroservice.csproj
 
       - name: Compilar aplicação
-        run: dotnet build --configuration Release --no-restore
+        run: dotnet build PedidoMicroservice/PedidoMicroservice.csproj --configuration Release --no-restore
 
       - name: Executar testes com cobertura
         run: dotnet test --configuration Release --collect:"XPlat Code Coverage" --settings coverlet.runsettings
