@@ -35,7 +35,7 @@ jobs:
         run: echo "$HOME/.dotnet/tools" >> $GITHUB_PATH
 
       - name: Gerar relatório de cobertura
-        run: reportgenerator "-reports:coverage.cobertura.xml" "-targetdir:coverage-report" -reporttypes:TextSummary
+        run: reportgenerator "-reports:./TestResults/*/coverage.cobertura.xml" "-targetdir:coverage-report" -reporttypes:TextSummary
 
       - name: Garantir cobertura mínima de 70%
         run: |
