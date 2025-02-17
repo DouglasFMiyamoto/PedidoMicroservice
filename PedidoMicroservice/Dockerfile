@@ -7,7 +7,7 @@ FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /src
 
 # Copiar apenas o .csproj do projeto principal
-COPY ["PedidoMicroservice.csproj", "./"]
+COPY ["PedidoMicroservice/PedidoMicroservice.csproj", "./"]
 
 # Restaurar dependências do projeto principal
 RUN dotnet restore "PedidoMicroservice.csproj"
